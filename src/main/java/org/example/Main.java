@@ -7,15 +7,19 @@ public class Main {
     {
         List<Integer> intList = new ArrayList<>();
         Random rand = new Random();
-        for(int i=0;i<10;i++)
+        for(int i=0;i<20;i++)
         {
-            intList.add(rand.nextInt());
+            intList.add(rand.nextInt(0,100));
         }
 
 
-        for(int i=0; i<intList.size();i++)
+//        for(int i=0; i<intList.size();i++)
+//        {
+//            System.out.println(intList.get(i));
+//        }
+        for (Integer integer: intList)
         {
-            System.out.println(intList.get(i));
+          System.out.print(integer + " ");
         }
 
 
