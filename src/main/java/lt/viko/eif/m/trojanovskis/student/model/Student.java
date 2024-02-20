@@ -1,5 +1,6 @@
 package lt.viko.eif.m.trojanovskis.student.model;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,19 +21,24 @@ public class Student
                 "\tCode: %s  \n" +
                 "\t%s " +
                 "\t Subjects: \n"+
-                "\t\t%s \n",
+                "%s \n",
                 this.firstName,this.lastName,this.code,this.account,this.FormatList());
     }
     private String FormatList()
     {
-        String result = " ";
 
-          result += subject.toString().replace(","," ").replace("["," ").replace("]"," ").trim();
+        StringBuilder builder = new StringBuilder();
+        for(Subject value:subject)
+            {
+                builder.append(value);
+            }
 
-
-
-
-        return result;
+//          result += subject.toString()
+//                  .replace(","," ")
+//                  .replace("["," ")
+//                  .replace("]"," ")
+//                  .trim();
+        return builder.toString();
     }
 
     public Student(String firstName, String lastName, String code)
