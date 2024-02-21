@@ -1,9 +1,21 @@
 package lt.viko.eif.m.trojanovskis.student.model;
 
+
+
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "subject")
 public class Subject
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private int id;
     private String subjectName;
     private int credits;
+
 
     @Override
     public String toString() {
@@ -31,5 +43,13 @@ public class Subject
 
     public void setSubjectName(String subjectName) {
         this.subjectName = subjectName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -1,10 +1,18 @@
 package lt.viko.eif.m.trojanovskis.student.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "account")
 public class Account
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private int id;
     private String username;
     private String password;
-    private String id;
+
 
     @Override
     public String toString() {
@@ -14,11 +22,11 @@ public class Account
                         "\t\tID: %s  \n",
                 this.username,this.password,this.id);
     }
-    public Account(String username, String password , String id)
+    public Account(String username, String password)
     {
         this.username = username;
         this.password = password;
-        this.id = id;
+
     }
 
     public String getPassword() {
@@ -37,11 +45,11 @@ public class Account
         this.username = username;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

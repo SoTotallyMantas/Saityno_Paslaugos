@@ -1,16 +1,26 @@
 package lt.viko.eif.m.trojanovskis.student.model;
 
+import javax.persistence.*;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
-
+@Entity
+@Table(name = "student")
 public class Student
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private int id;
+
     private String firstName;
     private String lastName;
     private String code;
 
+
+    @OneToOne(targetEntity = Account.class,cascade = CascadeType.ALL)
     private Account account;
+    @OneToMany(targetEntity = Subject.class,cascade = CascadeType.ALL)
     private List<Subject> subject  = new ArrayList<>();
 
     @Override
@@ -90,5 +100,13 @@ public class Student
 
     public void setSubject(List<Subject> subject) {
         this.subject = subject;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
