@@ -16,6 +16,10 @@ public class Subject
     private String subjectName;
     private int credits;
 
+    public Subject() {
+
+    }
+
 
     @Override
     public String toString() {

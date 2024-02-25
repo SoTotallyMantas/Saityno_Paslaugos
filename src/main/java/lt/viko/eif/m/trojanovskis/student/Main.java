@@ -34,7 +34,7 @@ public class Main {
          Transaction transaction = null;
          try(Session session = HibernateUtil.getSessionFactory().openSession())
          {
-             server = Server.createTcpServer("-tcpPort", "9092").start();
+             server = Server.createTcpServer("-tcpPort", "8082").start();
              transaction = session.beginTransaction();
              session.save(student);
              transaction.commit();
@@ -48,7 +48,10 @@ public class Main {
          }
          finally
          {
-             server.shutdown();
+
+             if (server != null) {
+                 server.shutdown();
+             }
          }
 
     }

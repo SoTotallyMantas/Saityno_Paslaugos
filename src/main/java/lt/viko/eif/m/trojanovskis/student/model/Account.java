@@ -13,6 +13,10 @@ public class Account
     private String username;
     private String password;
 
+    public Account() {
+
+    }
+
 
     @Override
     public String toString() {

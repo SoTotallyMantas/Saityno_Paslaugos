@@ -23,6 +23,10 @@ public class Student
     @OneToMany(targetEntity = Subject.class,cascade = CascadeType.ALL)
     private List<Subject> subject  = new ArrayList<>();
 
+    public Student() {
+
+    }
+
     @Override
     public String toString() {
         return String.format("student: \n" +
