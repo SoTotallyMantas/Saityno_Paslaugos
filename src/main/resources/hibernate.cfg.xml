@@ -27,7 +27,10 @@
         <mapping class="lt.viko.eif.m.trojanovskis.student.model.Account" />
         <mapping class="lt.viko.eif.m.trojanovskis.student.model.Student" />
         <mapping class="lt.viko.eif.m.trojanovskis.student.model.Subject" />
-        <mapping class="lt.viko.eif.m.trojanovskis.student.model.TempUser" />
+        <mapping class="lt.viko.eif.m.trojanovskis.student.model.Uzsakymas" />
+        <mapping class="lt.viko.eif.m.trojanovskis.student.model.Despecerine" />
+        <mapping class="lt.viko.eif.m.trojanovskis.student.model.Klientas" />
+        <mapping class="lt.viko.eif.m.trojanovskis.student.model.Vairuotojas" />
 
     </session-factory>
 </hibernate-configuration>

@@ -1,9 +1,6 @@
 package lt.viko.eif.m.trojanovskis.student.db;
 
-import lt.viko.eif.m.trojanovskis.student.model.Account;
-import lt.viko.eif.m.trojanovskis.student.model.Student;
-import lt.viko.eif.m.trojanovskis.student.model.Subject;
-import lt.viko.eif.m.trojanovskis.student.model.TempUser;
+import lt.viko.eif.m.trojanovskis.student.model.*;
 import lt.viko.eif.m.trojanovskis.student.util.HibernateUtil;
 import org.h2.tools.Server;
 import org.hibernate.Session;
@@ -21,14 +18,21 @@ public class DBLoader
       Subject test = new Subject("Test",10);
       Subject test2 = new Subject("Test2",15);
       Subject test3 = new Subject("Test3",20);
-      TempUser tempuser = new TempUser("Testas","Testauskas");
-
+      Klientas klientas = new Klientas("Testas","Testauskas","+37062252123");
+      Vairuotojas vairuotojas = new Vairuotojas("Taksistas","Taksioras","+312325252","ST:395");
+      Despecerine despecerine = new Despecerine("Despecerine","Despecerineee","+323123123123","12312312");
+      Uzsakymas uzsakymas = new Uzsakymas();
+      uzsakymas.setDespecerine(despecerine);
+      uzsakymas.setKlientas(klientas);
+      uzsakymas.setVairuotojas(vairuotojas);
+      uzsakymas.setAdresas("ADresasss");
 
 
       student.setAccount(account1);
       student.getSubject().add(test);
       student.getSubject().add(test2);
       student.getSubject().add(test3);
+
       org.h2.tools.Server server = null;
       Transaction transaction = null;
       try(Session session = HibernateUtil.getSessionFactory().openSession())
@@ -36,7 +40,7 @@ public class DBLoader
           server = Server.createTcpServer("-tcpPort", "9093").start();
           transaction = session.beginTransaction();
           session.save(student);
-          session.save(tempuser);
+          session.save(uzsakymas);
           transaction.commit();
       }
       catch (SQLException e)
