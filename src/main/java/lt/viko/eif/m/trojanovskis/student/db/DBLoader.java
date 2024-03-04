@@ -36,6 +36,7 @@ public class DBLoader
           server = Server.createTcpServer("-tcpPort", "9093").start();
           transaction = session.beginTransaction();
           session.save(student);
+          session.save(tempuser);
           transaction.commit();
       }
       catch (SQLException e)

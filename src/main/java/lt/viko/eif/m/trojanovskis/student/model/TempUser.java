@@ -8,11 +8,17 @@ import javax.persistence.Entity;
 public class TempUser extends AbstractUser
 {
 
-
-    public TempUser(String firstname,String Lastname)
+    private String firstname;
+    private String lastname;
+    public TempUser(String Firstname,String Lastname)
     {
-        this.firstname = firstname;
+        this.firstname = Firstname;
         this.lastname = Lastname;
+    }
+
+
+    public TempUser() {
+
     }
 
 

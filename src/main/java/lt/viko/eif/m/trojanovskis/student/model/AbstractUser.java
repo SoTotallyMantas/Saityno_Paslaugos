@@ -12,10 +12,7 @@ public abstract class AbstractUser
     public int id;
     public String firstname;
     public String lastname;
-    public AbstractUser()
-    {
 
-    }
 
 
     public String getLastname() {
