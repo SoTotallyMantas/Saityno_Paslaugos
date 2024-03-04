@@ -3,6 +3,7 @@ package lt.viko.eif.m.trojanovskis.student.db;
 import lt.viko.eif.m.trojanovskis.student.model.Account;
 import lt.viko.eif.m.trojanovskis.student.model.Student;
 import lt.viko.eif.m.trojanovskis.student.model.Subject;
+import lt.viko.eif.m.trojanovskis.student.model.TempUser;
 import lt.viko.eif.m.trojanovskis.student.util.HibernateUtil;
 import org.h2.tools.Server;
 import org.hibernate.Session;
@@ -20,6 +21,7 @@ public class DBLoader
       Subject test = new Subject("Test",10);
       Subject test2 = new Subject("Test2",15);
       Subject test3 = new Subject("Test3",20);
+      TempUser tempuser = new TempUser("Testas","Testauskas");
 
 
 
@@ -55,8 +57,8 @@ public class DBLoader
   {
       try(Session session=HibernateUtil.getSessionFactory().openSession())
       {
-          List<Student> studnets = session.createQuery("from Student",Student.class).list();
-          studnets.forEach(stud->System.out.println(stud));
+          List<Student> students = session.createQuery("from Student",Student.class).list();
+          students.forEach(stud->System.out.println(stud));
       }
       catch(Exception e)
       {

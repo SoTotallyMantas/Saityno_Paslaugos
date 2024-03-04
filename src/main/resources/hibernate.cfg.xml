@@ -27,6 +27,7 @@
         <mapping class="lt.viko.eif.m.trojanovskis.student.model.Account" />
         <mapping class="lt.viko.eif.m.trojanovskis.student.model.Student" />
         <mapping class="lt.viko.eif.m.trojanovskis.student.model.Subject" />
+        <mapping class="lt.viko.eif.m.trojanovskis.student.model.TempUser" />
 
     </session-factory>
 </hibernate-configuration>
