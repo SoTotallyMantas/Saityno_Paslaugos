@@ -1,9 +1,12 @@
 package lt.viko.eif.m.trojanovskis.student.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
+@XmlRootElement
+
 @Entity
 @Table(name = "student")
 public class Student

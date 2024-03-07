@@ -14,7 +14,12 @@ public class Menu
     {
         System.out.println("Make a selection");
         System.out.println("-----------------");
-        System.out.printf("| 1)  %10s \n", " Load Students");
+        //System.out.printf("| 1)  %10s \n", " Load Students");
+        System.out.printf("| 1)  %10s \n", " Load Orders");
+        System.out.printf("| 2)  %10s \n", " Load Dispatcher");
+        System.out.printf("| 3)  %10s \n", " Load Drivers");
+        System.out.printf("| 4)  %10s \n", " Load Clients");
+        System.out.printf("| 4)  %10s \n", " Print XML file ");
         System.out.printf("| 6)  %7s \n", " Quit ");
         menuSelected(selection());
     }
@@ -29,8 +34,28 @@ public class Menu
 
         switch (Input)
         {
+//            case 1:
+//                DBLoader.ListUzsakymas();
+//                showMenu();
+//                break;
             case 1:
-                DBLoader.ListStudents();
+                DBLoader.ListUzsakymas();
+                showMenu();
+                break;
+            case 2:
+                DBLoader.ListDespecerine();
+                showMenu();
+                break;
+            case 3:
+                DBLoader.ListVairuotojas();
+                showMenu();
+                break;
+            case 4:
+                DBLoader.ListKlientas();
+                showMenu();
+                break;
+            case 5:
+
                 showMenu();
                 break;
             case 6:

@@ -8,27 +8,35 @@ import javax.persistence.Entity;
 public class Klientas extends AbstractUser
 {
 
-    private String firstname;
-    private String lastname;
-    private String telefononumeris;
+    private String firstName;
+    private String lastName;
+    private String telefonoNumeris;
     public Klientas(String firstname,String lastname,String telefononumeris)
     {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.telefononumeris = telefononumeris;
+        this.firstName = firstname;
+        this.lastName = lastname;
+        this.telefonoNumeris = telefononumeris;
     }
 
 
     public Klientas() {
 
     }
+    @Override
+    public String toString() {
+        return String.format("\t\tClient: \n" +
+                        "\t\t\tFirst Name:   %s \n" +
+                        "\t\t\tLast Name:    %s \n" +
+                        "\t\t\tPhone Number: %s  \n",
+                this.firstName,this.lastName,this.telefonoNumeris);
+    }
 
 
     public String getTelefononumeris() {
-        return telefononumeris;
+        return telefonoNumeris;
     }
 
     public void setTelefononumeris(String telefononumeris) {
-        this.telefononumeris = telefononumeris;
+        this.telefonoNumeris = telefononumeris;
     }
 }

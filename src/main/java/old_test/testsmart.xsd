@@ -1,80 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="project" type="projectType"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="modelVersion" type="xs:string"/>
+  <xs:element name="groupId" type="xs:string"/>
+  <xs:element name="artifactId" type="xs:string" />
+  <xs:element name="version" type="xs:string"/>
+  <xs:element name="packaging" type="xs:string"/>
+  <xs:element name="scope" type="xs:string"/>
+  <xs:element name="project.build.sourceEncoding" type="xs:string" />
+  <xs:element name="maven.compiler.source" type="xs:string" />
+  <xs:element name="maven.compiler.target" type="xs:string" />
+  <xs:element name="project" type="projectType" />
+  <xs:element name="dependency" type="dependencyType"/>
+  <xs:element name="properties" type="propertiesType"/>
+  <xs:element name="dependencies" type="dependenciesType"/>
+  <xs:complexType name="projectType" >
+    <xs:sequence>
+      <xs:element ref="modelVersion"/>
+      <xs:element ref="groupId"/>
+      <xs:element ref="artifactId"/>
+      <xs:element ref="version"/>
+      <xs:element ref="packaging"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="propertiesType">
     <xs:sequence>
-      <xs:element type="xs:string" name="project.build.sourceEncoding"/>
-      <xs:element type="xs:byte" name="maven.compiler.source"/>
-      <xs:element type="xs:byte" name="maven.compiler.target"/>
+      <xs:element ref="project.build.sourceEncoding"/>
+      <xs:element ref="maven.compiler.source" />
+      <xs:element ref="maven.compiler.target" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="dependencyType">
     <xs:sequence>
-      <xs:element name="groupId">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="jakarta.xml.bind"/>
-            <xs:enumeration value="com.sun.xml.bind"/>
-            <xs:enumeration value="org.springframework"/>
-            <xs:enumeration value="com.h2database"/>
-            <xs:enumeration value="org.hibernate"/>
-            <xs:enumeration value="junit"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="artifactId">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="jakarta.xml.bind-api"/>
-            <xs:enumeration value="jaxb-impl"/>
-            <xs:enumeration value="spring-jdbc"/>
-            <xs:enumeration value="h2"/>
-            <xs:enumeration value="hibernate-core"/>
-            <xs:enumeration value="junit"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="version">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="3.0.1"/>
-            <xs:enumeration value="3.0.2"/>
-            <xs:enumeration value="5.1.20.RELEASE"/>
-            <xs:enumeration value="2.1.214"/>
-            <xs:enumeration value="5.4.24.Final"/>
-            <xs:enumeration value="RELEASE"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="scope" minOccurs="0">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="runtime"/>
-            <xs:enumeration value="compile"/>
-            <xs:enumeration value="test"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-    </xs:sequence>
+      <xs:element ref="groupId" />
+      <xs:element ref="artifactId" />
+      <xs:element ref="version" />
+      <xs:element ref="scope" minOccurs="0" maxOccurs="unbounded"/>
+  </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="dependenciesType">
-    <xs:sequence>
-      <xs:element type="dependencyType" name="dependency" maxOccurs="unbounded" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation> JAXB API v3.0.1  JAXB v3.0.2 reference implementation (curiously with com.sun coordinates)  https://mvnrepository.com/artifact/com.h2database/h2 </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="projectType">
-    <xs:sequence>
-      <xs:element type="xs:string" name="modelVersion"/>
-      <xs:element type="xs:string" name="groupId"/>
-      <xs:element type="xs:string" name="artifactId"/>
-      <xs:element type="xs:string" name="version"/>
-      <xs:element type="xs:string" name="packaging"/>
-      <xs:element type="propertiesType" name="properties"/>
-      <xs:element type="dependenciesType" name="dependencies"/>
-    </xs:sequence>
-  </xs:complexType>
+<xs:complexType name="dependenciesType">
+  <xs:sequence>
+    <xs:element ref="dependency" minOccurs="0" maxOccurs="unbounded"/>
+  </xs:sequence>
+</xs:complexType>
 </xs:schema>

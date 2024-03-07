@@ -21,7 +21,15 @@ public class Uzsakymas
     {
 
     }
-
+    @Override
+    public String toString() {
+        return String.format("Order: \n" +
+                        "\tAdress: %s \n" +
+                        "%s " +
+                        "%s " +
+                        "%s ",
+                this.adresas,this.klientas,this.vairuotojas,this.despecerine);
+    }
 
     public int getId() {
         return id;

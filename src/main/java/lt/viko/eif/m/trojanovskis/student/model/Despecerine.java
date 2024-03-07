@@ -8,39 +8,47 @@ import javax.persistence.Entity;
 public class Despecerine extends AbstractUser
 {
 
-    private String firstname;
-    private String lastname;
-    private String telefononumeris;
-    private String darbotelefonas;
+    private String firstName;
+    private String lastName;
+    private String telefonoNumeris;
+    private String darboTelefonas;
     public Despecerine(String firstname, String lastname, String telefononumeris, String darbotelefonas)
     {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.telefononumeris = telefononumeris;
-        this.darbotelefonas = darbotelefonas;
+        this.firstName = firstname;
+        this.lastName = lastname;
+        this.telefonoNumeris = telefononumeris;
+        this.darboTelefonas = darbotelefonas;
     }
 
 
     public Despecerine() {
 
     }
-
+    @Override
+    public String toString() {
+        return String.format("\t\tDispatch: \n" +
+                        "\t\t\tFirst Name:   %s \n" +
+                        "\t\t\tLast Name:    %s \n" +
+                        "\t\t\tPhone Number: %s \n" +
+                        "\t\t\tWork Number:  %s \n",
+                this.firstName,this.lastName,this.telefonoNumeris,this.darboTelefonas);
+    }
 
     public String getTelefononumeris() {
-        return telefononumeris;
+        return telefonoNumeris;
     }
 
     public void setTelefononumeris(String telefononumeris) {
-        this.telefononumeris = telefononumeris;
+        this.telefonoNumeris = telefononumeris;
     }
 
 
 
     public String getDarbotelefonas() {
-        return darbotelefonas;
+        return darboTelefonas;
     }
 
     public void setDarbotelefonas(String darbotelefonas) {
-        this.darbotelefonas = darbotelefonas;
+        this.darboTelefonas = darbotelefonas;
     }
 }

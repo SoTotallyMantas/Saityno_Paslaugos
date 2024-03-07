@@ -10,25 +10,25 @@ public abstract class AbstractUser
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name ="id")
     public int id;
-    public String firstname;
-    public String lastname;
+    public String firstName;
+    public String lastName;
 
 
 
     public String getLastname() {
-        return lastname;
+        return lastName;
     }
 
     public void setLastname(String lastname) {
-        this.lastname = lastname;
+        this.lastName = lastname;
     }
 
     public String getFirstname() {
-        return firstname;
+        return firstName;
     }
 
     public void setFirstname(String firstname) {
-        this.firstname = firstname;
+        this.firstName = firstname;
     }
 
     public int getId() {
