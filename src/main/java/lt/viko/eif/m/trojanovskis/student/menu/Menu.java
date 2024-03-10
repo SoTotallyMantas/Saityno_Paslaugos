@@ -20,6 +20,7 @@ public class Menu
         System.out.printf("| 3)  %10s \n", " Load Drivers");
         System.out.printf("| 4)  %10s \n", " Load Clients");
         System.out.printf("| 5)  %10s \n", " Load Order XML ");
+        System.out.printf("| 6)  %10s \n", " Load XML To Object ");
         System.out.printf("| 6)  %7s \n", " Quit ");
         menuSelected(selection());
     }
@@ -59,6 +60,10 @@ public class Menu
                 showMenu();
                 break;
             case 6:
+                DBLoader.ListXMLToObject();
+                showMenu();
+                break;
+            case 7:
                  System.out.println("Thank you and goodbye!");
                  System.exit(0);
                  break;

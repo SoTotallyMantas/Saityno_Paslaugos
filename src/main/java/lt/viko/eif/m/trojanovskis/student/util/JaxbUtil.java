@@ -53,15 +53,20 @@ public class JaxbUtil
         }
 
     }
-    public <T> T xmlobject(String path, Class<T> clazz)
+    public <T> void ConvertToObject( Class<T> clazz)
     {
-        try {
-            File file = new File(path);
-            JAXBContext jaxbContext = JAXBContext.newInstance(clazz);
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+        try
+        {
 
-            T obj = clazz.cast(jaxbUnmarshaller.unmarshal(file));
-            return obj;
+            GenericList<T> Data = new GenericList<T>();
+            File file = new File( "JAXBObject.xml" );
+            JAXBContext jaxbContext = JAXBContext.newInstance(new Class[]{clazz.getClass(),Data.getClass()});
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            Data = (GenericList<T>) jaxbUnmarshaller.unmarshal( file );
+            Data.getData().forEach(data->System.out.println(data));
+
+
+
         }
         catch (JAXBException e)
         {

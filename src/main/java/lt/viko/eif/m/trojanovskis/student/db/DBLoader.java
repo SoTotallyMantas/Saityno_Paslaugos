@@ -157,5 +157,24 @@ public class DBLoader
 
 
     }
+    public static <T> void ListXMLToObject()
+    {
+        try {
+
+
+            JaxbUtil jaxbutil = new JaxbUtil();
+
+
+            jaxbutil.ConvertToObject(Uzsakymas.class);
+
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+
+        }
+
+
+    }
 
 }
