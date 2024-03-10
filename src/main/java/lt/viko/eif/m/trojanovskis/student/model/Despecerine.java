@@ -2,20 +2,23 @@ package lt.viko.eif.m.trojanovskis.student.model;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
+import javax.xml.bind.annotation.*;
 
+@XmlRootElement(name="Dispatch")
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(propOrder={"id","firstname","lastname","telefononumeris","darbotelefonas"})
 @Entity
 @DiscriminatorColumn(name = "despecerine")
 public class Despecerine extends AbstractUser
 {
 
-    private String firstName;
-    private String lastName;
+
     private String telefonoNumeris;
     private String darboTelefonas;
     public Despecerine(String firstname, String lastname, String telefononumeris, String darbotelefonas)
     {
-        this.firstName = firstname;
-        this.lastName = lastname;
+        setFirstname(firstname);
+        setLastname(lastname);
         this.telefonoNumeris = telefononumeris;
         this.darboTelefonas = darbotelefonas;
     }
@@ -31,13 +34,14 @@ public class Despecerine extends AbstractUser
                         "\t\t\tLast Name:    %s \n" +
                         "\t\t\tPhone Number: %s \n" +
                         "\t\t\tWork Number:  %s \n",
-                this.firstName,this.lastName,this.telefonoNumeris,this.darboTelefonas);
+                getFirstname(),getLastname(),this.telefonoNumeris,this.darboTelefonas);
     }
 
     public String getTelefononumeris() {
         return telefonoNumeris;
     }
 
+    @XmlElement(name="Phone_Number")
     public void setTelefononumeris(String telefononumeris) {
         this.telefonoNumeris = telefononumeris;
     }
@@ -47,7 +51,7 @@ public class Despecerine extends AbstractUser
     public String getDarbotelefonas() {
         return darboTelefonas;
     }
-
+    @XmlElement(name="Work_Phone_Number")
     public void setDarbotelefonas(String darbotelefonas) {
         this.darboTelefonas = darbotelefonas;
     }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<List>
+    <Order id="1">
+        <adresas>ADresasss</adresas>
+        <klientas>
+            <id>3</id>
+            <FirstName>Testas</FirstName>
+            <Lastname>Testauskas</Lastname>
+            <Phone_Number>+37062252123</Phone_Number>
+        </klientas>
+        <vairuotojas>
+            <id>4</id>
+            <FirstName>Taksistas</FirstName>
+            <Lastname>Taksioras</Lastname>
+            <Phone_Number>+312325252</Phone_Number>
+            <Car_Model>ST:395</Car_Model>
+        </vairuotojas>
+        <despecerine>
+            <id>2</id>
+            <FirstName>Despecerine</FirstName>
+            <Lastname>Despecerineee</Lastname>
+            <Phone_Number>+323123123123</Phone_Number>
+            <Work_Phone_Number>12312312</Work_Phone_Number>
+        </despecerine>
+    </Order>
+</List>

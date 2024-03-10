@@ -2,23 +2,27 @@ package lt.viko.eif.m.trojanovskis.student.model;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
+import javax.xml.bind.annotation.*;
 
+@XmlRootElement(name="Driver")
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(propOrder={"id","firstname","lastname","telefononumeris","automobiliomodelis"})
 @Entity
 @DiscriminatorColumn(name = "vairuotojas")
 public class Vairuotojas extends AbstractUser
 {
 
-    private String firstName;
-    private String lastName;
+
     private String telefonoNumeris;
     private String automobilioModelis;
     public Vairuotojas(String firstname, String lastname, String telefononumeris,String automobiliomodelis)
     {
-        this.firstName = firstname;
-        this.lastName = lastname;
+        setFirstname(firstname);
+        setLastname(lastname);
         this.telefonoNumeris = telefononumeris;
         this.automobilioModelis = automobiliomodelis;
     }
+
 
 
     public Vairuotojas() {
@@ -31,14 +35,14 @@ public class Vairuotojas extends AbstractUser
                         "\t\t\tLast Name:    %s \n" +
                         "\t\t\tPhone Number: %s  \n" +
                         "\t\t\tCar Model:    %s \n",
-                this.firstName,this.lastName,this.telefonoNumeris,this.automobilioModelis);
+                getFirstname(),getLastname(),this.telefonoNumeris,this.automobilioModelis);
     }
 
 
     public String getTelefononumeris() {
         return telefonoNumeris;
     }
-
+    @XmlElement(name="Phone_Number")
     public void setTelefononumeris(String telefononumeris) {
         this.telefonoNumeris = telefononumeris;
     }
@@ -46,7 +50,7 @@ public class Vairuotojas extends AbstractUser
     public String getAutomobiliomodelis() {
         return automobilioModelis;
     }
-
+    @XmlElement(name="Car_Model")
     public void setAutomobiliomodelis(String automobiliomodelis) {
         this.automobilioModelis = automobiliomodelis;
     }

@@ -1,7 +1,11 @@
 package lt.viko.eif.m.trojanovskis.student.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
 
+@XmlRootElement(name="Order")
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(propOrder={"id","adresas","klientas","vairuotojas","despecerine"})
 @Entity
 @Table(name = "uzsakymas")
 public class Uzsakymas
@@ -34,7 +38,7 @@ public class Uzsakymas
     public int getId() {
         return id;
     }
-
+    @XmlAttribute
     public void setId(int id) {
         this.id = id;
     }
@@ -42,7 +46,7 @@ public class Uzsakymas
     public Klientas getKlientas() {
         return klientas;
     }
-
+   // @XmlElement(name="Order_Client")
     public void setKlientas(Klientas klientas) {
         this.klientas = klientas;
     }
@@ -50,7 +54,7 @@ public class Uzsakymas
     public Vairuotojas getVairuotojas() {
         return vairuotojas;
     }
-
+   // @XmlElement(name="Order_Driver")
     public void setVairuotojas(Vairuotojas vairuotojas) {
         this.vairuotojas = vairuotojas;
     }
@@ -58,7 +62,7 @@ public class Uzsakymas
     public Despecerine getDespecerine() {
         return despecerine;
     }
-
+   // @XmlElement(name="Order_Dispatch")
     public void setDespecerine(Despecerine despecerine) {
         this.despecerine = despecerine;
     }
@@ -66,7 +70,7 @@ public class Uzsakymas
     public String getAdresas() {
         return adresas;
     }
-
+   // @XmlElement(name = "Adress")
     public void setAdresas(String adresas) {
         this.adresas = adresas;
     }

@@ -7,12 +7,13 @@ import org.h2.tools.Server;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.xml.bind.JAXB;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DBLoader
 {
+
   public static void SetupDB()
   {
 //      Student student = new Student("Name1" , "LastName1" , "Code1");
@@ -32,6 +33,7 @@ public class DBLoader
       uzsakymas.setKlientas(klientas);
       uzsakymas.setVairuotojas(vairuotojas);
       uzsakymas.setAdresas("ADresasss");
+
 
 
 
@@ -121,6 +123,39 @@ public class DBLoader
         {
             e.printStackTrace();
         }
+    }
+    public static void ListOrderXML()
+    {
+        try(Session session=HibernateUtil.getSessionFactory().openSession())
+        {
+
+            List<Uzsakymas> orders = session.createQuery("from Uzsakymas",Uzsakymas.class).list();
+            ListXML(orders);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+
+        }
+    }
+    public static <T> void ListXML(T data)
+    {
+        try {
+
+
+            JaxbUtil jaxbutil = new JaxbUtil();
+
+
+            jaxbutil.ConvertToXML(data);
+
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+
+        }
+
+
     }
 
 }

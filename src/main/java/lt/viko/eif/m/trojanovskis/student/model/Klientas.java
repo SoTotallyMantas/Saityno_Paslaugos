@@ -2,19 +2,23 @@ package lt.viko.eif.m.trojanovskis.student.model;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
+import javax.persistence.OrderBy;
+import javax.xml.bind.annotation.*;
 
+@XmlRootElement(name="Client")
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(propOrder={"id","firstname","lastname","telefononumeris"})
 @Entity
 @DiscriminatorColumn(name = "klientas")
 public class Klientas extends AbstractUser
 {
 
-    private String firstName;
-    private String lastName;
+
     private String telefonoNumeris;
     public Klientas(String firstname,String lastname,String telefononumeris)
     {
-        this.firstName = firstname;
-        this.lastName = lastname;
+        setFirstname(firstname);
+        setLastname(lastname);
         this.telefonoNumeris = telefononumeris;
     }
 
@@ -28,7 +32,7 @@ public class Klientas extends AbstractUser
                         "\t\t\tFirst Name:   %s \n" +
                         "\t\t\tLast Name:    %s \n" +
                         "\t\t\tPhone Number: %s  \n",
-                this.firstName,this.lastName,this.telefonoNumeris);
+                getFirstname(),getLastname(),this.telefonoNumeris);
     }
 
 
@@ -36,6 +40,7 @@ public class Klientas extends AbstractUser
         return telefonoNumeris;
     }
 
+     @XmlElement(name="Phone_Number")
     public void setTelefononumeris(String telefononumeris) {
         this.telefonoNumeris = telefononumeris;
     }
