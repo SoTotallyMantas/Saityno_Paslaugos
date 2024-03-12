@@ -29,7 +29,7 @@ public class DBLoader
 //      student.getSubject().add(test);
 //      student.getSubject().add(test2);
 //      student.getSubject().add(test3);
-      List<Uzsakymas> uzsakymasList = new ArrayList<>();
+      List<Order> orderList = new ArrayList<>();
       List<String> firstNames = Arrays.asList("Jonas","Andrius","Tomas","Marius","Vytautas","Domantas","Lukas","Matas","Dovydas","Rokas");
       List<String> lastNames = Arrays.asList("Petrauskas","Jonaitis","Kazlauskas","Burokas","Simkus","Vasiliauskas","Kavaliauskas","Zuvoskis","Lapinaitis","Kazinec");
       List<String> numbers = Arrays.asList("+37012345678", "+37087654321", "+37098765432", "+37012345679", "+37087654320", "+37098765431", "+37012345680", "+37087654322", "+37098765433", "+37012345681");
@@ -45,23 +45,23 @@ public class DBLoader
           randomLastNames = new Random().nextInt(0,9);
           randomFirstNames = new Random().nextInt(0,9);
           randomNumbers = new Random().nextInt(0,9);
-          Klientas klientas = new Klientas(firstNames.get(randomFirstNames),lastNames.get(randomLastNames), numbers.get(randomNumbers));
+          Client client = new Client(firstNames.get(randomFirstNames),lastNames.get(randomLastNames), numbers.get(randomNumbers));
           randomLastNames = new Random().nextInt(0,9);
           randomFirstNames = new Random().nextInt(0,9);
           randomNumbers = new Random().nextInt(0,9);
           randomPlate = new Random().nextInt(0,9);
-          Vairuotojas vairuotojas = new Vairuotojas(firstNames.get(randomFirstNames),lastNames.get(randomLastNames), numbers.get(randomNumbers), licensePlate.get(randomPlate));
+          Driver driver = new Driver(firstNames.get(randomFirstNames),lastNames.get(randomLastNames), numbers.get(randomNumbers), licensePlate.get(randomPlate));
           randomLastNames = new Random().nextInt(0,9);
           randomFirstNames = new Random().nextInt(0,9);
           randomNumbers = new Random().nextInt(0,9);
-          Despecerine despecerine = new Despecerine(firstNames.get(randomFirstNames),lastNames.get(randomLastNames), numbers.get(randomNumbers),numbers.get(randomFirstNames));
-          Uzsakymas uzsakymas = new Uzsakymas();
-          uzsakymas.setDespecerine(despecerine);
-          uzsakymas.setKlientas(klientas);
-          uzsakymas.setVairuotojas(vairuotojas);
+          Dispatch dispatch = new Dispatch(firstNames.get(randomFirstNames),lastNames.get(randomLastNames), numbers.get(randomNumbers),numbers.get(randomFirstNames));
+          Order order = new Order();
+          order.setDispatch(dispatch);
+          order.setClient(client);
+          order.setDriver(driver);
           randomAdress = new Random().nextInt(0,9);
-          uzsakymas.setAdresas(adresses.get(randomAdress));
-          uzsakymasList.add(uzsakymas);
+          order.setAddress(adresses.get(randomAdress));
+          orderList.add(order);
       }
 
 
@@ -77,7 +77,7 @@ public class DBLoader
           server = Server.createTcpServer("-tcpPort", "9093").start();
           transaction = session.beginTransaction();
           //session.save(student);
-          uzsakymasList.forEach(uzsakymas -> session.save(uzsakymas));
+          orderList.forEach(order -> session.save(order));
 
           transaction.commit();
       }
@@ -112,7 +112,7 @@ public class DBLoader
     {
         try(Session session=HibernateUtil.getSessionFactory().openSession())
         {
-            List<Uzsakymas> orders = session.createQuery("from Uzsakymas",Uzsakymas.class).list();
+            List<Order> orders = session.createQuery("from Order", Order.class).list();
             orders.forEach(ord->System.out.println(ord));
 
         }
@@ -125,7 +125,7 @@ public class DBLoader
     {
         try(Session session=HibernateUtil.getSessionFactory().openSession())
         {
-            List<Klientas> clients = session.createQuery("from Klientas",Klientas.class).list();
+            List<Client> clients = session.createQuery("from Client",Client.class).list();
             clients.forEach(cln->System.out.println(cln));
         }
         catch(Exception e)
@@ -137,7 +137,7 @@ public class DBLoader
     {
         try(Session session=HibernateUtil.getSessionFactory().openSession())
         {
-            List<Vairuotojas> drivers = session.createQuery("from Vairuotojas ",Vairuotojas.class).list();
+            List<Driver> drivers = session.createQuery("from Driver",Driver.class).list();
              drivers.forEach(driv->System.out.println(driv));
         }
         catch(Exception e)
@@ -149,7 +149,7 @@ public class DBLoader
     {
         try(Session session=HibernateUtil.getSessionFactory().openSession())
         {
-            List<Despecerine> dispatcher = session.createQuery("from Despecerine ",Despecerine.class).list();
+            List<Dispatch> dispatcher = session.createQuery("from Dispatch ",Dispatch.class).list();
             dispatcher.forEach(disp->System.out.println(disp));
         }
         catch(Exception e)
@@ -162,7 +162,7 @@ public class DBLoader
         try(Session session=HibernateUtil.getSessionFactory().openSession())
         {
 
-            List<Uzsakymas> orders = session.createQuery("from Uzsakymas",Uzsakymas.class).list();
+            List<Order> orders = session.createQuery("from Order", Order.class).list();
             ListXML(orders);
         }
         catch(Exception e)
@@ -200,7 +200,7 @@ public class DBLoader
 
 
 
-            JaxbUtil.transformToPOJO(Uzsakymas.class, new File("JAXBObject.xml"), new File("JAXBObject.xsd"));
+            JaxbUtil.transformToPOJO(Order.class, new File("JAXBObject.xml"), new File("JAXBObject.xsd"));
 
         }
         catch(Exception e)

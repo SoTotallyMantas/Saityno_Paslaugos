@@ -2,28 +2,27 @@ package lt.viko.eif.m.trojanovskis.student.model;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
-import javax.persistence.OrderBy;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name="Client")
 @XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(propOrder={"id","firstname","lastname","telefononumeris"})
+@XmlType(propOrder={"id","firstname","lastname","phonenumber"})
 @Entity
-@DiscriminatorColumn(name = "klientas")
-public class Klientas extends AbstractUser
+@DiscriminatorColumn(name = "client")
+public class Client extends AbstractUser
 {
 
 
-    private String telefonoNumeris;
-    public Klientas(String firstname,String lastname,String telefononumeris)
+    private String phoneNumber;
+    public Client(String firstname, String lastname, String phoneNumber)
     {
         setFirstname(firstname);
         setLastname(lastname);
-        this.telefonoNumeris = telefononumeris;
+        this.phoneNumber = phoneNumber;
     }
 
 
-    public Klientas() {
+    public Client() {
 
     }
     @Override
@@ -32,16 +31,16 @@ public class Klientas extends AbstractUser
                         "\t\t\tFirst Name:   %s \n" +
                         "\t\t\tLast Name:    %s \n" +
                         "\t\t\tPhone Number: %s  \n",
-                getFirstname(),getLastname(),this.telefonoNumeris);
+                getFirstname(),getLastname(),this.phoneNumber);
     }
 
 
-    public String getTelefononumeris() {
-        return telefonoNumeris;
+    public String getPhonenumber() {
+        return phoneNumber;
     }
 
      @XmlElement(name="Phone_Number")
-    public void setTelefononumeris(String telefononumeris) {
-        this.telefonoNumeris = telefononumeris;
+    public void setPhonenumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

@@ -1,233 +1,233 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <List>
     <Order id="1">
-        <adresas>Tuskulenu g 2</adresas>
-        <klientas>
-            <id>3</id>
-            <FirstName>Lukas</FirstName>
-            <Lastname>Kazlauskas</Lastname>
-            <Phone_Number>+37087654320</Phone_Number>
-        </klientas>
-        <vairuotojas>
-            <id>4</id>
-            <FirstName>Dovydas</FirstName>
-            <Lastname>Kazlauskas</Lastname>
-            <Phone_Number>+37012345678</Phone_Number>
-            <Car_Model>T1052</Car_Model>
-        </vairuotojas>
-        <despecerine>
+        <adresas>T.Narburto g 42</adresas>
+        <client>
             <id>2</id>
-            <FirstName>Dovydas</FirstName>
+            <FirstName>Tomas</FirstName>
+            <Lastname>Kavaliauskas</Lastname>
+            <Phone_Number>+37012345678</Phone_Number>
+        </client>
+        <driver>
+            <id>4</id>
+            <FirstName>Marius</FirstName>
             <Lastname>Vasiliauskas</Lastname>
-            <Phone_Number>+37087654321</Phone_Number>
-            <Work_Phone_Number>+37098765433</Work_Phone_Number>
+            <Phone_Number>+37098765433</Phone_Number>
+            <Car_Model>T5421</Car_Model>
+        </driver>
+        <despecerine>
+            <id>3</id>
+            <FirstName>Matas</FirstName>
+            <Lastname>Zuvoskis</Lastname>
+            <Phone_Number>+37012345678</Phone_Number>
+            <Work_Phone_Number>+37087654322</Work_Phone_Number>
         </despecerine>
     </Order>
     <Order id="5">
-        <adresas>Mindaugo g 41</adresas>
-        <klientas>
+        <adresas>Seliu g 50</adresas>
+        <client>
+            <id>6</id>
+            <FirstName>Lukas</FirstName>
+            <Lastname>Simkus</Lastname>
+            <Phone_Number>+37087654320</Phone_Number>
+        </client>
+        <driver>
+            <id>8</id>
+            <FirstName>Domantas</FirstName>
+            <Lastname>Simkus</Lastname>
+            <Phone_Number>+37087654320</Phone_Number>
+            <Car_Model>T4362</Car_Model>
+        </driver>
+        <despecerine>
             <id>7</id>
             <FirstName>Andrius</FirstName>
             <Lastname>Petrauskas</Lastname>
-            <Phone_Number>+37087654321</Phone_Number>
-        </klientas>
-        <vairuotojas>
-            <id>8</id>
-            <FirstName>Dovydas</FirstName>
-            <Lastname>Burokas</Lastname>
-            <Phone_Number>+37087654322</Phone_Number>
-            <Car_Model>T4362</Car_Model>
-        </vairuotojas>
-        <despecerine>
-            <id>6</id>
-            <FirstName>Lukas</FirstName>
-            <Lastname>Kazlauskas</Lastname>
-            <Phone_Number>+37012345679</Phone_Number>
-            <Work_Phone_Number>+37012345680</Work_Phone_Number>
+            <Phone_Number>+37012345680</Phone_Number>
+            <Work_Phone_Number>+37087654321</Work_Phone_Number>
         </despecerine>
     </Order>
     <Order id="9">
-        <adresas>Ozo g 53</adresas>
-        <klientas>
-            <id>11</id>
-            <FirstName>Marius</FirstName>
-            <Lastname>Vasiliauskas</Lastname>
-            <Phone_Number>+37087654321</Phone_Number>
-        </klientas>
-        <vairuotojas>
-            <id>12</id>
-            <FirstName>Lukas</FirstName>
-            <Lastname>Kazlauskas</Lastname>
-            <Phone_Number>+37098765432</Phone_Number>
-            <Car_Model>T1725</Car_Model>
-        </vairuotojas>
-        <despecerine>
+        <adresas>T.Narburto g 42</adresas>
+        <client>
             <id>10</id>
-            <FirstName>Jonas</FirstName>
-            <Lastname>Zuvoskis</Lastname>
+            <FirstName>Andrius</FirstName>
+            <Lastname>Kazlauskas</Lastname>
+            <Phone_Number>+37087654322</Phone_Number>
+        </client>
+        <driver>
+            <id>12</id>
+            <FirstName>Vytautas</FirstName>
+            <Lastname>Kazlauskas</Lastname>
             <Phone_Number>+37012345679</Phone_Number>
-            <Work_Phone_Number>+37012345678</Work_Phone_Number>
+            <Car_Model>T1252</Car_Model>
+        </driver>
+        <despecerine>
+            <id>11</id>
+            <FirstName>Domantas</FirstName>
+            <Lastname>Zuvoskis</Lastname>
+            <Phone_Number>+37098765431</Phone_Number>
+            <Work_Phone_Number>+37098765431</Work_Phone_Number>
         </despecerine>
     </Order>
     <Order id="13">
         <adresas>Mindaugo g 41</adresas>
-        <klientas>
-            <id>15</id>
-            <FirstName>Marius</FirstName>
+        <client>
+            <id>14</id>
+            <FirstName>Tomas</FirstName>
+            <Lastname>Vasiliauskas</Lastname>
+            <Phone_Number>+37098765433</Phone_Number>
+        </client>
+        <driver>
+            <id>16</id>
+            <FirstName>Vytautas</FirstName>
             <Lastname>Petrauskas</Lastname>
             <Phone_Number>+37012345678</Phone_Number>
-        </klientas>
-        <vairuotojas>
-            <id>16</id>
-            <FirstName>Dovydas</FirstName>
-            <Lastname>Lapinaitis</Lastname>
-            <Phone_Number>+37098765431</Phone_Number>
-            <Car_Model>T2052</Car_Model>
-        </vairuotojas>
+            <Car_Model>T5421</Car_Model>
+        </driver>
         <despecerine>
-            <id>14</id>
-            <FirstName>Andrius</FirstName>
-            <Lastname>Vasiliauskas</Lastname>
-            <Phone_Number>+37087654322</Phone_Number>
-            <Work_Phone_Number>+37087654321</Work_Phone_Number>
+            <id>15</id>
+            <FirstName>Vytautas</FirstName>
+            <Lastname>Jonaitis</Lastname>
+            <Phone_Number>+37087654321</Phone_Number>
+            <Work_Phone_Number>+37087654320</Work_Phone_Number>
         </despecerine>
     </Order>
     <Order id="17">
-        <adresas>Liubarto g 30</adresas>
-        <klientas>
-            <id>19</id>
-            <FirstName>Dovydas</FirstName>
-            <Lastname>Zuvoskis</Lastname>
-            <Phone_Number>+37012345679</Phone_Number>
-        </klientas>
-        <vairuotojas>
-            <id>20</id>
-            <FirstName>Matas</FirstName>
-            <Lastname>Kavaliauskas</Lastname>
-            <Phone_Number>+37098765432</Phone_Number>
-            <Car_Model>T4362</Car_Model>
-        </vairuotojas>
-        <despecerine>
+        <adresas>T.Narburto g 42</adresas>
+        <client>
             <id>18</id>
+            <FirstName>Dovydas</FirstName>
+            <Lastname>Petrauskas</Lastname>
+            <Phone_Number>+37087654321</Phone_Number>
+        </client>
+        <driver>
+            <id>20</id>
+            <FirstName>Lukas</FirstName>
+            <Lastname>Burokas</Lastname>
+            <Phone_Number>+37087654320</Phone_Number>
+            <Car_Model>T1725</Car_Model>
+        </driver>
+        <despecerine>
+            <id>19</id>
             <FirstName>Tomas</FirstName>
-            <Lastname>Zuvoskis</Lastname>
-            <Phone_Number>+37012345680</Phone_Number>
+            <Lastname>Simkus</Lastname>
+            <Phone_Number>+37087654320</Phone_Number>
             <Work_Phone_Number>+37098765432</Work_Phone_Number>
         </despecerine>
     </Order>
     <Order id="21">
-        <adresas>Mindaugo g 41</adresas>
-        <klientas>
-            <id>23</id>
-            <FirstName>Marius</FirstName>
-            <Lastname>Jonaitis</Lastname>
-            <Phone_Number>+37012345679</Phone_Number>
-        </klientas>
-        <vairuotojas>
-            <id>24</id>
-            <FirstName>Andrius</FirstName>
-            <Lastname>Jonaitis</Lastname>
-            <Phone_Number>+37098765431</Phone_Number>
-            <Car_Model>T4362</Car_Model>
-        </vairuotojas>
-        <despecerine>
+        <adresas>Ozo g 53</adresas>
+        <client>
             <id>22</id>
-            <FirstName>Domantas</FirstName>
+            <FirstName>Jonas</FirstName>
+            <Lastname>Jonaitis</Lastname>
+            <Phone_Number>+37012345680</Phone_Number>
+        </client>
+        <driver>
+            <id>24</id>
+            <FirstName>Vytautas</FirstName>
             <Lastname>Simkus</Lastname>
             <Phone_Number>+37098765432</Phone_Number>
-            <Work_Phone_Number>+37098765431</Work_Phone_Number>
+            <Car_Model>T6457</Car_Model>
+        </driver>
+        <despecerine>
+            <id>23</id>
+            <FirstName>Marius</FirstName>
+            <Lastname>Lapinaitis</Lastname>
+            <Phone_Number>+37098765432</Phone_Number>
+            <Work_Phone_Number>+37012345679</Work_Phone_Number>
         </despecerine>
     </Order>
     <Order id="25">
-        <adresas>Erfurto 90</adresas>
-        <klientas>
-            <id>27</id>
-            <FirstName>Marius</FirstName>
-            <Lastname>Jonaitis</Lastname>
-            <Phone_Number>+37098765431</Phone_Number>
-        </klientas>
-        <vairuotojas>
-            <id>28</id>
-            <FirstName>Andrius</FirstName>
-            <Lastname>Burokas</Lastname>
-            <Phone_Number>+37012345680</Phone_Number>
-            <Car_Model>T5421</Car_Model>
-        </vairuotojas>
-        <despecerine>
+        <adresas>Liubarto g 30</adresas>
+        <client>
             <id>26</id>
-            <FirstName>Dovydas</FirstName>
-            <Lastname>Jonaitis</Lastname>
-            <Phone_Number>+37087654322</Phone_Number>
-            <Work_Phone_Number>+37098765433</Work_Phone_Number>
-        </despecerine>
-    </Order>
-    <Order id="29">
-        <adresas>A.Kojalaviciaus 23</adresas>
-        <klientas>
-            <id>31</id>
-            <FirstName>Andrius</FirstName>
-            <Lastname>Vasiliauskas</Lastname>
-            <Phone_Number>+37012345679</Phone_Number>
-        </klientas>
-        <vairuotojas>
-            <id>32</id>
-            <FirstName>Matas</FirstName>
+            <FirstName>Domantas</FirstName>
             <Lastname>Petrauskas</Lastname>
-            <Phone_Number>+37087654321</Phone_Number>
-            <Car_Model>T1725</Car_Model>
-        </vairuotojas>
-        <despecerine>
-            <id>30</id>
-            <FirstName>Marius</FirstName>
-            <Lastname>Jonaitis</Lastname>
-            <Phone_Number>+37087654321</Phone_Number>
-            <Work_Phone_Number>+37012345679</Work_Phone_Number>
-        </despecerine>
-    </Order>
-    <Order id="33">
-        <adresas>T.Narburto g 42</adresas>
-        <klientas>
-            <id>35</id>
-            <FirstName>Matas</FirstName>
-            <Lastname>Petrauskas</Lastname>
+            <Phone_Number>+37012345680</Phone_Number>
+        </client>
+        <driver>
+            <id>28</id>
+            <FirstName>Domantas</FirstName>
+            <Lastname>Lapinaitis</Lastname>
             <Phone_Number>+37012345678</Phone_Number>
-        </klientas>
-        <vairuotojas>
-            <id>36</id>
-            <FirstName>Jonas</FirstName>
-            <Lastname>Jonaitis</Lastname>
-            <Phone_Number>+37098765433</Phone_Number>
-            <Car_Model>T5421</Car_Model>
-        </vairuotojas>
+            <Car_Model>T2452</Car_Model>
+        </driver>
         <despecerine>
-            <id>34</id>
+            <id>27</id>
             <FirstName>Vytautas</FirstName>
-            <Lastname>Jonaitis</Lastname>
-            <Phone_Number>+37098765432</Phone_Number>
+            <Lastname>Kavaliauskas</Lastname>
+            <Phone_Number>+37087654320</Phone_Number>
             <Work_Phone_Number>+37087654320</Work_Phone_Number>
         </despecerine>
     </Order>
-    <Order id="37">
+    <Order id="29">
         <adresas>Liubarto g 30</adresas>
-        <klientas>
-            <id>39</id>
+        <client>
+            <id>30</id>
+            <FirstName>Andrius</FirstName>
+            <Lastname>Kazlauskas</Lastname>
+            <Phone_Number>+37087654322</Phone_Number>
+        </client>
+        <driver>
+            <id>32</id>
+            <FirstName>Vytautas</FirstName>
+            <Lastname>Vasiliauskas</Lastname>
+            <Phone_Number>+37098765433</Phone_Number>
+            <Car_Model>T1252</Car_Model>
+        </driver>
+        <despecerine>
+            <id>31</id>
+            <FirstName>Vytautas</FirstName>
+            <Lastname>Vasiliauskas</Lastname>
+            <Phone_Number>+37087654321</Phone_Number>
+            <Work_Phone_Number>+37087654320</Work_Phone_Number>
+        </despecerine>
+    </Order>
+    <Order id="33">
+        <adresas>Tuskulenu g 2</adresas>
+        <client>
+            <id>34</id>
+            <FirstName>Vytautas</FirstName>
+            <Lastname>Kazlauskas</Lastname>
+            <Phone_Number>+37012345678</Phone_Number>
+        </client>
+        <driver>
+            <id>36</id>
+            <FirstName>Matas</FirstName>
+            <Lastname>Zuvoskis</Lastname>
+            <Phone_Number>+37012345679</Phone_Number>
+            <Car_Model>T1725</Car_Model>
+        </driver>
+        <despecerine>
+            <id>35</id>
             <FirstName>Jonas</FirstName>
-            <Lastname>Simkus</Lastname>
-            <Phone_Number>+37012345680</Phone_Number>
-        </klientas>
-        <vairuotojas>
+            <Lastname>Burokas</Lastname>
+            <Phone_Number>+37098765431</Phone_Number>
+            <Work_Phone_Number>+37012345678</Work_Phone_Number>
+        </despecerine>
+    </Order>
+    <Order id="37">
+        <adresas>A.Kojalaviciaus 23</adresas>
+        <client>
+            <id>38</id>
+            <FirstName>Domantas</FirstName>
+            <Lastname>Kazlauskas</Lastname>
+            <Phone_Number>+37012345679</Phone_Number>
+        </client>
+        <driver>
             <id>40</id>
             <FirstName>Andrius</FirstName>
             <Lastname>Jonaitis</Lastname>
-            <Phone_Number>+37087654320</Phone_Number>
-            <Car_Model>T1725</Car_Model>
-        </vairuotojas>
+            <Phone_Number>+37098765431</Phone_Number>
+            <Car_Model>T2052</Car_Model>
+        </driver>
         <despecerine>
-            <id>38</id>
-            <FirstName>Marius</FirstName>
-            <Lastname>Burokas</Lastname>
-            <Phone_Number>+37087654322</Phone_Number>
-            <Work_Phone_Number>+37012345679</Work_Phone_Number>
+            <id>39</id>
+            <FirstName>Domantas</FirstName>
+            <Lastname>Kazlauskas</Lastname>
+            <Phone_Number>+37012345679</Phone_Number>
+            <Work_Phone_Number>+37098765431</Work_Phone_Number>
         </despecerine>
     </Order>
 </List>

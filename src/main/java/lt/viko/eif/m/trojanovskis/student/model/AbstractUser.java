@@ -1,14 +1,13 @@
 package lt.viko.eif.m.trojanovskis.student.model;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlTransient;
 
 
 @XmlTransient
-@XmlSeeAlso({Klientas.class, Despecerine.class, Vairuotojas.class})
+@XmlSeeAlso({Client.class, Dispatch.class, Driver.class})
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)

@@ -1,16 +1,16 @@
 <!DOCTYPE List [
         <!ELEMENT List (Order)*>
-        <!ELEMENT Order (adresas,klientas,vairuotojas,despecerine)*>
+        <!ELEMENT Order (adresas,client,driver,dispatch)*>
         <!ATTLIST Order
                 id CDATA #REQUIRED>
         <!ELEMENT adresas (#PCDATA)>
-        <!ELEMENT klientas (id,FirstName,Lastname,Phone_Number)*>
+        <!ELEMENT client (id,FirstName,Lastname,Phone_Number)*>
         <!ELEMENT id (#PCDATA)>
         <!ELEMENT FirstName (#PCDATA)>
         <!ELEMENT Lastname (#PCDATA)>
         <!ELEMENT Phone_Number (#PCDATA)>
-        <!ELEMENT vairuotojas (id,FirstName,Lastname,Phone_Number,Car_Model)*>
+        <!ELEMENT driver (id,FirstName,Lastname,Phone_Number,Car_Model)*>
         <!ELEMENT Car_Model (#PCDATA)>
-        <!ELEMENT despecerine (id,FirstName,Lastname,Phone_Number,Work_Phone_Number)*>
+        <!ELEMENT dispatch (id,FirstName,Lastname,Phone_Number,Work_Phone_Number)*>
         <!ELEMENT Work_Phone_Number (#PCDATA)>
         ]>

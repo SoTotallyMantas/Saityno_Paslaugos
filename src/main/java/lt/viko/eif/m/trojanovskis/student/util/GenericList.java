@@ -1,18 +1,16 @@
 package lt.viko.eif.m.trojanovskis.student.util;
 
-import lt.viko.eif.m.trojanovskis.student.model.Despecerine;
-import lt.viko.eif.m.trojanovskis.student.model.Klientas;
-import lt.viko.eif.m.trojanovskis.student.model.Uzsakymas;
-import lt.viko.eif.m.trojanovskis.student.model.Vairuotojas;
+import lt.viko.eif.m.trojanovskis.student.model.Dispatch;
+import lt.viko.eif.m.trojanovskis.student.model.Client;
+import lt.viko.eif.m.trojanovskis.student.model.Order;
+import lt.viko.eif.m.trojanovskis.student.model.Driver;
 
 import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import java.util.ArrayList;
 import java.util.List;
 @XmlRootElement(name="List")
-@XmlSeeAlso({Uzsakymas.class, Vairuotojas.class, Klientas.class, Despecerine.class})
+@XmlSeeAlso({Order.class, Driver.class, Client.class, Dispatch.class})
 public class GenericList<T>
 {
     private List<T> Data;
