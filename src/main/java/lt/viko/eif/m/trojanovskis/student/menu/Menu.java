@@ -21,7 +21,7 @@ public class Menu
         System.out.printf("| 4)  %10s \n", " Load Clients");
         System.out.printf("| 5)  %10s \n", " Load Order XML ");
         System.out.printf("| 6)  %10s \n", " Load XML To Object ");
-        System.out.printf("| 7)  %7s \n", " Quit ");
+        System.out.printf("| 8)  %7s \n", " Quit ");
         menuSelected(selection());
     }
     public static int selection()

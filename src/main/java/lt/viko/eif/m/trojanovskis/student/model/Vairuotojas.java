@@ -34,7 +34,7 @@ public class Vairuotojas extends AbstractUser
                         "\t\t\tFirst Name:   %s \n" +
                         "\t\t\tLast Name:    %s \n" +
                         "\t\t\tPhone Number: %s  \n" +
-                        "\t\t\tCar Model:    %s \n",
+                        "\t\t\tLicense Plate:    %s \n",
                 getFirstname(),getLastname(),this.telefonoNumeris,this.automobilioModelis);
     }
 
