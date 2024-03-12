@@ -1,4 +1,4 @@
-package lt.viko.eif.m.trojanovskis.student.model;
+package old_test.Old_Model;
 
 
 

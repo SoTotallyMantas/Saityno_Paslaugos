@@ -1,8 +1,7 @@
-package lt.viko.eif.m.trojanovskis.student.model;
+package old_test.Old_Model;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 @XmlRootElement

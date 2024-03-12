@@ -3,6 +3,7 @@ package lt.viko.eif.m.trojanovskis.student.db;
 import lt.viko.eif.m.trojanovskis.student.model.*;
 import lt.viko.eif.m.trojanovskis.student.util.HibernateUtil;
 import lt.viko.eif.m.trojanovskis.student.util.JaxbUtil;
+import old_test.Old_Model.Student;
 import org.h2.tools.Server;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -175,11 +176,13 @@ public class DBLoader
         try {
 
 
-            JaxbUtil jaxbutil = new JaxbUtil();
 
 
-           // jaxbutil.ConvertToXML(data, new File("JAXBObject.xml"), new File("JAXBObject.xsd"));
-            jaxbutil.ConvertToXML(data, new File("JAXBObject.xml"));
+
+
+           JaxbUtil.transformToXML(data, new File("JAXBObject.xml"), new File("JAXBObject.xsd"));
+
+
         }
         catch(Exception e)
         {
@@ -195,10 +198,9 @@ public class DBLoader
         try {
 
 
-            JaxbUtil jaxbutil = new JaxbUtil();
 
 
-            jaxbutil.ConvertToObject(Uzsakymas.class, new File("JAXBObject.xml"), new File("JAXBObject.xsd"));
+            JaxbUtil.transformToPOJO(Uzsakymas.class, new File("JAXBObject.xml"), new File("JAXBObject.xsd"));
 
         }
         catch(Exception e)
