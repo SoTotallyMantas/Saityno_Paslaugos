@@ -3,11 +3,15 @@ package lt.viko.eif.m.trojanovskis.student.model;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
+/**
+ *  Order Model class
+ *
+ */
 @XmlRootElement(name="Order")
 @XmlAccessorType(XmlAccessType.PROPERTY)
 @XmlType(propOrder={"id","address","client","driver","dispatch"})
 @Entity
-@Table(name = "uzsakymas")
+@Table(name = "orders")
 public class Order
 {
     @Id

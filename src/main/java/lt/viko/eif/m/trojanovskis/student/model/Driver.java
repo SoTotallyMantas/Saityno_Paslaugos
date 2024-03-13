@@ -4,6 +4,10 @@ import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.*;
 
+/**
+ * Public Driver model class
+ *
+ */
 @XmlRootElement(name="Driver")
 @XmlAccessorType(XmlAccessType.PROPERTY)
 @XmlType(propOrder={"id","firstname","lastname","phonenumber","licenseplate"})

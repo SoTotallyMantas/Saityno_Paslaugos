@@ -3,7 +3,10 @@ package lt.viko.eif.m.trojanovskis.student.model;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.*;
-
+/**
+ * Public Client Model class
+ *
+ */
 @XmlRootElement(name="Client")
 @XmlAccessorType(XmlAccessType.PROPERTY)
 @XmlType(propOrder={"id","firstname","lastname","phonenumber"})

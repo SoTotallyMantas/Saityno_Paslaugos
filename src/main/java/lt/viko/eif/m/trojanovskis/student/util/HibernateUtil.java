@@ -5,12 +5,19 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
+/**
+ * Hibernate database Utility class
+ *
+ */
 public class HibernateUtil
 {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
+    /**
+     * Hibernate GetSessionFactory method
+     * @return returns sessionFactory
+     */
     public static SessionFactory getSessionFactory()
     {
         if(sessionFactory ==null) {

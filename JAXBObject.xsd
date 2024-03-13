@@ -6,7 +6,7 @@
   <xs:element name="Phone_Number" type="xs:string"/>
   <xs:element name="License_Plate" type="xs:string"/>
   <xs:element name="Work_Number" type="xs:string"/>
-  <xs:element name="Address" type="xs:string"/>
+  <xs:element name="address" type="xs:string"/>
   <xs:element name="client">
     <xs:complexType>
       <xs:sequence>
@@ -42,7 +42,7 @@
   <xs:element name="Order">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="Address"/>
+        <xs:element ref="address"/>
         <xs:element ref="client"/>
         <xs:element ref="driver"/>
         <xs:element ref="dispatch"/>

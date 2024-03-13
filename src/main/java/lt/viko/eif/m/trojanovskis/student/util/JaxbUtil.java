@@ -11,7 +11,10 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.util.List;
-
+/**
+ * Java Marshalling JAXB Utility class
+ *
+ */
 public final class JaxbUtil {
     private JaxbUtil(){}
 
@@ -27,6 +30,13 @@ public final class JaxbUtil {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     *
+     * @param data Data object to Marshall into XML
+     * @param path Path to output XML file
+     * @param pathXsd Path file to xml XSD schema
+     */
         public static <T > void transformToXML(T data, File path, File pathXsd)
         {
             try {
@@ -47,11 +57,20 @@ public final class JaxbUtil {
             }
 
         }
-        public static <T > void transformToPOJO(Class<T> clazz, File path, File pathXsd)
+
+    /**
+     *
+     * @param clazz UnMarshalling class Type
+     * @param path UnMarshalling File path
+     * @param pathXsd UnMarshalling XML XSD schema File Path
+     * @return returns XML object as GenericList<T>
+     *
+     */
+        public static <T> GenericList<T> transformToPOJO(Class<T> clazz, File path, File pathXsd)
         {
             try {
 
-                GenericList<T> Data = new GenericList<T>();
+                GenericList<T> Data = new GenericList<>();
 
                 JAXBContext jaxbContext = JAXBContext.newInstance(new Class[]{clazz.getClass(), Data.getClass()});
 
@@ -59,8 +78,8 @@ public final class JaxbUtil {
 
                 jaxbUnmarshaller.setSchema(SchemaValidate(pathXsd));
                 Data = (GenericList<T>) jaxbUnmarshaller.unmarshal(path);
-                Data.getData().forEach(data -> System.out.println(data));
 
+                return Data;
 
             } catch (JAXBException e)
             {

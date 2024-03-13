@@ -1,6 +1,7 @@
 package lt.viko.eif.m.trojanovskis.student.db;
 
 import lt.viko.eif.m.trojanovskis.student.model.*;
+import lt.viko.eif.m.trojanovskis.student.util.GenericList;
 import lt.viko.eif.m.trojanovskis.student.util.HibernateUtil;
 import lt.viko.eif.m.trojanovskis.student.util.JaxbUtil;
 import old_test.Old_Model.Student;
@@ -15,9 +16,16 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Database loader
+ *
+ */
 public class DBLoader
 {
-
+    /**
+     *  Database setup
+     *  With Example Data that is uploaded to Database Memory
+     */
   public static void SetupDB()
   {
 //      Student student = new Student("Name1" , "LastName1" , "Code1");
@@ -96,19 +104,11 @@ public class DBLoader
           }
       }
   }
-    public static void ListStudents()
-    {
-        try(Session session=HibernateUtil.getSessionFactory().openSession())
-        {
-            List<Student> students = session.createQuery("from Student",Student.class).list();
-            students.forEach(stud->System.out.println(stud));
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
-    public static void ListUzsakymas()
+
+    /**
+     * List Order class data from database
+     */
+    public static void ListOrder()
     {
         try(Session session=HibernateUtil.getSessionFactory().openSession())
         {
@@ -121,7 +121,10 @@ public class DBLoader
             e.printStackTrace();
         }
     }
-    public static void ListKlientas()
+    /**
+     * List Client class data from database
+     */
+    public static void ListClient()
     {
         try(Session session=HibernateUtil.getSessionFactory().openSession())
         {
@@ -133,7 +136,10 @@ public class DBLoader
             e.printStackTrace();
         }
     }
-    public static void ListVairuotojas()
+    /**
+     * List Driver class data from database
+     */
+    public static void ListDriver()
     {
         try(Session session=HibernateUtil.getSessionFactory().openSession())
         {
@@ -145,7 +151,10 @@ public class DBLoader
             e.printStackTrace();
         }
     }
-    public static void ListDespecerine()
+    /**
+     * List Dispatch class data from database
+     */
+    public static void ListDispatch()
     {
         try(Session session=HibernateUtil.getSessionFactory().openSession())
         {
@@ -157,6 +166,10 @@ public class DBLoader
             e.printStackTrace();
         }
     }
+
+    /**
+     * List Order class data from database And Convert To XML
+     */
     public static void ListOrderXML()
     {
         try(Session session=HibernateUtil.getSessionFactory().openSession())
@@ -171,6 +184,12 @@ public class DBLoader
 
         }
     }
+
+    /**
+     * Convert POJO To XML
+     * @param data POJO Data
+     *
+     */
     public static <T> void ListXML(T data)
     {
         try {
@@ -193,14 +212,17 @@ public class DBLoader
 
     }
 
+    /**
+     * Function call to convert XML To object
+     */
     public static <T> void ListXMLToObject()
     {
         try {
 
 
-
-
-            JaxbUtil.transformToPOJO(Order.class, new File("JAXBObject.xml"), new File("JAXBObject.xsd"));
+            GenericList<T> Data = new GenericList<T>();
+            Data = (GenericList<T>) JaxbUtil.transformToPOJO(Order.class, new File("JAXBObject.xml"), new File("JAXBObject.xsd"));
+            Data.getData().forEach(data -> System.out.println(data));
 
         }
         catch(Exception e)

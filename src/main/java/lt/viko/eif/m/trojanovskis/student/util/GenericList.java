@@ -9,6 +9,10 @@ import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import java.util.List;
+/**
+ * Generic model class wrapper for marshalling
+ *
+ */
 @XmlRootElement(name="List")
 @XmlSeeAlso({Order.class, Driver.class, Client.class, Dispatch.class})
 public class GenericList<T>

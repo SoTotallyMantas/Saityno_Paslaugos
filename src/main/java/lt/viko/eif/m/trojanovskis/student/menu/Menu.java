@@ -1,10 +1,7 @@
 package lt.viko.eif.m.trojanovskis.student.menu;
 
 import lt.viko.eif.m.trojanovskis.student.db.DBLoader;
-import net.bytebuddy.pool.TypePool;
-import org.hibernate.sql.Select;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu
@@ -40,19 +37,19 @@ public class Menu
 //                showMenu();
 //                break;
             case 1:
-                DBLoader.ListUzsakymas();
+                DBLoader.ListOrder();
                 showMenu();
                 break;
             case 2:
-                DBLoader.ListDespecerine();
+                DBLoader.ListDispatch();
                 showMenu();
                 break;
             case 3:
-                DBLoader.ListVairuotojas();
+                DBLoader.ListDriver();
                 showMenu();
                 break;
             case 4:
-                DBLoader.ListKlientas();
+                DBLoader.ListClient();
                 showMenu();
                 break;
             case 5:

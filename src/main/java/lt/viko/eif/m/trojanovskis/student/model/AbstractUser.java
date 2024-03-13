@@ -6,6 +6,9 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlTransient;
 
 
+/**
+ *  Abstract User Model class
+ */
 @XmlTransient
 @XmlSeeAlso({Client.class, Dispatch.class, Driver.class})
 

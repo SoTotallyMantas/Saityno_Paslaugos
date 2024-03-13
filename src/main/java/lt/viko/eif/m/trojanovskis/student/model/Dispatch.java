@@ -4,6 +4,10 @@ import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.*;
 
+/**
+ * Public Dispatch Model class
+ *
+ */
 @XmlRootElement(name="Dispatch")
 @XmlAccessorType(XmlAccessType.PROPERTY)
 @XmlType(propOrder={"id","firstname","lastname","phonenumber","worknumber"})
