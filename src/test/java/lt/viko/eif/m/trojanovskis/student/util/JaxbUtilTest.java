@@ -10,15 +10,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JaxbUtilTest {
 
     Order order = new Order();
 
-    Client client = new Client("Tadas","T","123");
-    Driver driver = new Driver("Tadas","T","123","STD:123");
-    Dispatch dispatch = new Dispatch("Tadas","T","123","+123");
+    Client client = new Client("Tadas", "T", "123");
+    Driver driver = new Driver("Tadas", "T", "123", "STD:123");
+    Dispatch dispatch = new Dispatch("Tadas", "T", "123", "+123");
     String address = "Address";
     GenericList<Order> myGenericlist = new GenericList<Order>();
 
@@ -34,7 +34,7 @@ class JaxbUtilTest {
         GenericList<Order> orderGenericList = JaxbUtil.transformToPOJO(Order.class, new File("JAXBJUnitTest.xml"), new File("JAXBObject.xsd"));
         JaxbUtil.transformToXML(orders, new File("JAXBJUnitTest.xml"), new File("JAXBObject.xsd"));
         GenericList<Order> orderGenericListTest = JaxbUtil.transformToPOJO(Order.class, new File("JAXBJUnitTest.xml"), new File("JAXBObject.xsd"));
-        assertEquals(orderGenericList.getData().toString().trim(),orderGenericListTest.getData().toString().trim());
+        assertEquals(orderGenericList.getData().toString().trim(), orderGenericListTest.getData().toString().trim());
     }
 
     @Test
@@ -49,7 +49,7 @@ class JaxbUtilTest {
         GenericList<Order> orderGenericList = JaxbUtil.transformToPOJO(Order.class, new File("JAXBJUnitTest.xml"), new File("JAXBObject.xsd"));
         JaxbUtil.transformToXML(orders, new File("JAXBJUnitTest.xml"), new File("JAXBObject.xsd"));
         GenericList<Order> orderGenericListTest = JaxbUtil.transformToPOJO(Order.class, new File("JAXBJUnitTest.xml"), new File("JAXBObject.xsd"));
-        assertEquals(orderGenericList.getData().toString().trim(),orderGenericListTest.getData().toString().trim());
+        assertEquals(orderGenericList.getData().toString().trim(), orderGenericListTest.getData().toString().trim());
 
     }
 }

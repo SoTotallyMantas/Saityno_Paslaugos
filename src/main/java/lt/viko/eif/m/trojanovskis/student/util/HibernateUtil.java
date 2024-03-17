@@ -5,22 +5,21 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
 /**
  * Hibernate database Utility class
- *
  */
-public class HibernateUtil
-{
+public class HibernateUtil {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
     /**
      * Hibernate GetSessionFactory method
+     *
      * @return returns sessionFactory
      */
-    public static SessionFactory getSessionFactory()
-    {
-        if(sessionFactory ==null) {
+    public static SessionFactory getSessionFactory() {
+        if (sessionFactory == null) {
             try {
                 registry = new StandardServiceRegistryBuilder().configure().build();
 
@@ -28,11 +27,9 @@ public class HibernateUtil
                 Metadata metadata = sources.getMetadataBuilder().build();
                 sessionFactory = metadata.getSessionFactoryBuilder().build();
 
-            } catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
-                if(registry !=null)
-                {
+                if (registry != null) {
                     StandardServiceRegistryBuilder.destroy(registry);
                 }
             }
@@ -40,10 +37,9 @@ public class HibernateUtil
         }
         return sessionFactory;
     }
-    public static void shutdown()
-    {
-        if (registry !=null)
-        {
+
+    public static void shutdown() {
+        if (registry != null) {
             StandardServiceRegistryBuilder.destroy(registry);
         }
     }

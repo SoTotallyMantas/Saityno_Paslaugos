@@ -6,21 +6,19 @@ import javax.xml.bind.annotation.*;
 
 /**
  * Public Dispatch Model class
- *
  */
-@XmlRootElement(name="Dispatch")
+@XmlRootElement(name = "Dispatch")
 @XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(propOrder={"id","firstname","lastname","phonenumber","worknumber"})
+@XmlType(propOrder = {"id", "firstname", "lastname", "phonenumber", "worknumber"})
 @Entity
 @DiscriminatorColumn(name = "dispatch")
-public class Dispatch extends AbstractUser
-{
+public class Dispatch extends AbstractUser {
 
 
     private String phoneNumber;
     private String workNumber;
-    public Dispatch(String firstname, String lastname, String phoneNumber, String workNumber)
-    {
+
+    public Dispatch(String firstname, String lastname, String phoneNumber, String workNumber) {
         setFirstname(firstname);
         setLastname(lastname);
         this.phoneNumber = phoneNumber;
@@ -31,6 +29,7 @@ public class Dispatch extends AbstractUser
     public Dispatch() {
 
     }
+
     @Override
     public String toString() {
         return String.format("\t\tDispatch: \n" +
@@ -38,24 +37,24 @@ public class Dispatch extends AbstractUser
                         "\t\t\tLast Name:    %s \n" +
                         "\t\t\tPhone Number: %s \n" +
                         "\t\t\tWork Number:  %s \n",
-                getFirstname(),getLastname(),this.phoneNumber,this.workNumber);
+                getFirstname(), getLastname(), this.phoneNumber, this.workNumber);
     }
 
     public String getPhonenumber() {
         return phoneNumber;
     }
 
-    @XmlElement(name="Phone_Number")
+    @XmlElement(name = "Phone_Number")
     public void setPhonenumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
 
-
     public String getWorknumber() {
         return workNumber;
     }
-    @XmlElement(name="Work_Number")
+
+    @XmlElement(name = "Work_Number")
     public void setWorknumber(String workNumber) {
         this.workNumber = workNumber;
     }

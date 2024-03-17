@@ -7,49 +7,48 @@ import javax.xml.bind.annotation.XmlTransient;
 
 
 /**
- *  Abstract User Model class
+ * Abstract User Model class
  */
 @XmlTransient
 @XmlSeeAlso({Client.class, Dispatch.class, Driver.class})
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class AbstractUser
-{
+public abstract class AbstractUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name ="id")
+    @Column(name = "id")
     public int id;
     private String firstName;
-   private String lastName;
-
-
+    private String lastName;
 
 
     @XmlElement
     public void setId(int id) {
         this.id = id;
     }
-    @XmlElement(name="FirstName")
+
+    @XmlElement(name = "FirstName")
     public void setFirstname(String firstname) {
         this.firstName = firstname;
     }
-    @XmlElement(name="Lastname")
+
+    @XmlElement(name = "Lastname")
     public void setLastname(String lastname) {
         this.lastName = lastname;
     }
+
     public String getFirstname() {
         return firstName;
     }
+
     public String getLastname() {
         return lastName;
     }
+
     public int getId() {
         return id;
     }
-
-
-
 
 
 }
