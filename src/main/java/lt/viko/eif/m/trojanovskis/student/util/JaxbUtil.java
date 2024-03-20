@@ -1,12 +1,10 @@
 package lt.viko.eif.m.trojanovskis.student.util;
 
+import lt.viko.eif.m.trojanovskis.student.xsdtest.OrderList;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.*;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
@@ -20,6 +18,12 @@ public final class JaxbUtil {
     private JaxbUtil() {
     }
 
+    /**
+     *
+     * Prepares Schema for Validation
+     * @param pathXsd XSD File Path
+     * @return returns Schema for validation
+     */
     public static Schema SchemaValidate(File pathXsd) {
         try {
             SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
@@ -31,6 +35,8 @@ public final class JaxbUtil {
     }
 
     /**
+     *
+     * Marshall Generic class object to XML
      * @param data    Data object to Marshall into XML
      * @param path    Path to output XML file
      * @param pathXsd Path file to xml XSD schema
@@ -56,6 +62,8 @@ public final class JaxbUtil {
     }
 
     /**
+     *
+     * UnMarshal Generic Class object
      * @param clazz   UnMarshalling class Type
      * @param path    UnMarshalling File path
      * @param pathXsd UnMarshalling XML XSD schema File Path
@@ -80,4 +88,32 @@ public final class JaxbUtil {
 
         }
     }
+
+    /**
+     *
+     * UnMarshall XML to generated Java classes
+     * @param path XML File path
+     * @param pathXsd XSD File path
+     * @return returns transformed object from XML
+     */
+    public static OrderList transformToPOJOGeneratedClass(File path, File pathXsd) {
+        try {
+
+
+
+            JAXBContext jaxbContext = JAXBContext.newInstance("lt.viko.eif.m.trojanovskis.student.xsdtest");
+
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+
+            jaxbUnmarshaller.setSchema(SchemaValidate(pathXsd));
+            OrderList orderList  = (OrderList) jaxbUnmarshaller.unmarshal(path);
+
+            return orderList;
+
+        } catch (JAXBException e) {
+            throw new RuntimeException(e);
+
+        }
+    }
+
 }

@@ -10,7 +10,17 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ *  XML File Validation class
+ */
 public class ValidateXMLFile {
+    /**
+     *
+     *  Validates provided XML File with provided XSD file
+     * @param xsdPath XSD File Path
+     * @param xmlPath XML File Path
+     * @return returns true or false response based on validation result
+     */
     public static boolean validateXMLSchema(String xsdPath, String xmlPath) {
 
         try {

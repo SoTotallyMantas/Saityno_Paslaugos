@@ -38,6 +38,10 @@ public class HibernateUtil {
         return sessionFactory;
     }
 
+    /**
+     *
+     * Shutdown Hibernate
+     */
     public static void shutdown() {
         if (registry != null) {
             StandardServiceRegistryBuilder.destroy(registry);

@@ -72,6 +72,7 @@ public class DBLoader {
         org.h2.tools.Server server = null;
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
             server = Server.createTcpServer("-tcpPort", "9093").start();
             transaction = session.beginTransaction();
             //session.save(student);
@@ -88,6 +89,7 @@ public class DBLoader {
                 server.shutdown();
             }
         }
+
     }
 
     /**

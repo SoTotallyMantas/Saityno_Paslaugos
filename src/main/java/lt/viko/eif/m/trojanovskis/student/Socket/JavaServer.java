@@ -9,6 +9,10 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ *  Server socket class
+ *
+ */
 public class JavaServer {
     private ServerSocket serverSocket;
     private Socket clientSocket;
@@ -16,11 +20,21 @@ public class JavaServer {
 
     private BufferedReader in;
 
+    /**
+     *
+     * Start server
+     */
     public static void startServer() {
         JavaServer server = new JavaServer();
         server.start(6666);
     }
 
+    /**
+     *
+     * Initialize server  wait for client socket
+     * Based on greeting case switch function to return
+     * @param port server port
+     */
     public void start(int port) {
         try {
             serverSocket = new ServerSocket(port);
@@ -63,6 +77,7 @@ public class JavaServer {
                             break;
 
                         case "7":
+                            out.println("Goodbye");
                             stop();
                             break;
                         default:
@@ -87,6 +102,10 @@ public class JavaServer {
         }
     }
 
+    /**
+     *
+     * Stop server socket
+     */
     public void stop() {
         try {
             in.close();

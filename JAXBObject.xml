@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<List>
+<OrderList>
     <Order id="1">
         <address>Rygos g 5</address>
         <client>
@@ -460,4 +460,4 @@
             <Work_Number>+37098765433</Work_Number>
         </dispatch>
     </Order>
-</List>
+</OrderList>

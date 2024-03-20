@@ -6,8 +6,13 @@ import lt.viko.eif.m.trojanovskis.student.db.DBLoader;
 
 import java.util.Scanner;
 
+/**
+ *  Start program menu Class
+ */
 public class StartMenu {
-
+    /**
+     * Shows menu for selection
+     */
     public static void showMenu() {
         System.out.println("Make a selection");
         System.out.println("-----------------");
@@ -20,12 +25,19 @@ public class StartMenu {
 
     }
 
+    /**
+     * Awaits user input
+     * @return returns user input as integer
+     */
     public static int selection() {
         Scanner UserInput = new Scanner(System.in);
 
         return UserInput.nextInt();
     }
 
+    /**
+     *  Menu function selection using switch case
+     */
     public static void menuSelected() {
         int Input = selection();
         switch (Input) {
