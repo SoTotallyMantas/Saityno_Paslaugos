@@ -26,10 +26,10 @@
         <property name="hibernate.dbcp.maxIdle">10</property>
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
-        <mapping class="lt.viko.eif.m.trojanovskis.student.model.Order" />
-        <mapping class="lt.viko.eif.m.trojanovskis.student.model.Dispatch" />
-        <mapping class="lt.viko.eif.m.trojanovskis.student.model.Client" />
-        <mapping class="lt.viko.eif.m.trojanovskis.student.model.Driver" />
+        <mapping class="lt.viko.eif.m.trojanovskis.taksi.model.Order" />
+        <mapping class="lt.viko.eif.m.trojanovskis.taksi.model.Dispatch" />
+        <mapping class="lt.viko.eif.m.trojanovskis.taksi.model.Client" />
+        <mapping class="lt.viko.eif.m.trojanovskis.taksi.model.Driver" />
 
     </session-factory>
 </hibernate-configuration>
